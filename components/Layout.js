@@ -251,7 +251,7 @@ export const Layout = function () {
                   Well versed in CSS, dabbled with CSS-in-JS using Emotion, with
                   a preference for CSS Modules
                 </li>
-                <li className="mt-1 text-lg leading-7 text-gray-700">
+                <li className="mt-3 text-lg leading-7 text-gray-700">
                   Tinkered with Symfony 2 in a somewhat distant past
                 </li>
               </ul>
