@@ -245,7 +245,7 @@ export const Layout = function () {
                 </li>
                 <li className="mt-3 text-lg leading-7 text-gray-700">
                   Highly proficient with React, using plain JavaScript,
-                  TypeScript, or Flow
+                  TypeScript, and Flow
                 </li>
                 <li className="mt-3 text-lg leading-7 text-gray-700">
                   Well versed in CSS, dabbled with CSS-in-JS using Emotion, with
