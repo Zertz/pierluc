@@ -239,18 +239,20 @@ export const Layout = function () {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
             <div className="py-4">
               <ul className="list-disc list-inside mb-8">
+                <li className="mt-1 text-lg leading-7 text-gray-700">
+                  Node.js is my bread and butter, from building apps, to
+                  webpack, and stopping by Lerna
+                </li>
                 <li className="mt-3 text-lg leading-7 text-gray-700">
-                  Frontend: React, Redux, Flow, CSS
+                  Highly proficient with React, using plain JavaScript,
+                  TypeScript, or Flow
+                </li>
+                <li className="mt-3 text-lg leading-7 text-gray-700">
+                  Well versed in CSS, dabbled with CSS-in-JS using Emotion, with
+                  a preference for CSS Modules
                 </li>
                 <li className="mt-1 text-lg leading-7 text-gray-700">
-                  Backend: Node.js, (Express, Micro, and a little Hapi),
-                  Cloudflare, Stripe
-                </li>
-                <li className="mt-1 text-lg leading-7 text-gray-700">
-                  Databases: MongoDB, Redis, Google Cloud Datastore, BigQuery
-                </li>
-                <li className="mt-1 text-lg leading-7 text-gray-700">
-                  Tooling: Git (GitHub and Jira), Webpack, Lerna
+                  Tinkered with Symfony 2 in a somewhat distant past
                 </li>
               </ul>
             </div>
@@ -290,6 +292,10 @@ export const Layout = function () {
                       Wrote a lot of code for Stripe billing, many packages with
                       Lerna (and recently removed it all in favor of simpler
                       alternatives)
+                    </li>
+                    <li className="mt-1 text-lg leading-7 text-gray-300">
+                      Bought Tailwind UI on release day, with the goal of giving
+                      a a fresh cost of paint to the landing page and dashboard!
                     </li>
                   </ul>
                   <div className="mt-8">
