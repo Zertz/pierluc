@@ -357,7 +357,7 @@ export const Layout = function () {
                       Can{" "}
                       <a
                         className="underline"
-                        href="https://canados.now.sh/?c=40.713956_-96.064453&f=3_5&z=5"
+                        href="https://canados.now.sh/?c=40.713956_-96.064453&f=3_5&y=1950_2006&z=5"
                       >
                         dynamically generate
                       </a>{" "}
