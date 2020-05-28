@@ -412,7 +412,8 @@ export const Layout = function () {
                     FOCUS Smart Fleet and Fuel Optimization
                   </h3>
                   <p className="mt-1 text-sm leading-5 text-gray-500">
-                    TypeScript
+                    Primarily working on a large web app with a TypeScript
+                    backend and jQuery frontend
                   </p>
                 </div>
                 <div>
