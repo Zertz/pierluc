@@ -1,4 +1,4 @@
-export const Layout = function () {
+export function Layout() {
   return (
     <div className="h-screen flex overflow-hidden bg-gray-100">
       <div className="hidden md:flex md:flex-shrink-0">
@@ -407,12 +407,12 @@ export const Layout = function () {
                   </p>
                   <ul className="list-disc list-inside">
                     <li className="mt-3 text-lg leading-7 text-gray-300">
-                      Haven't had much time and resources to work on it in the
-                      last few years but still a project I'm proud of!
+                      Haven&apos;t had much time and resources to work on it in
+                      the last few years but still a project I&apos;m proud of!
                     </li>
                     <li className="mt-1 text-lg leading-7 text-gray-300">
-                      Contributed early in the project's life and grew it from
-                      ~100 stars or so to over 500
+                      Contributed early in the project&apos;s life and grew it
+                      from ~100 stars or so to over 500
                     </li>
                     <li className="mt-1 text-lg leading-7 text-gray-300">
                       Wrote and maintained the documentation website from
@@ -504,7 +504,7 @@ export const Layout = function () {
                           </li>
                           <li>
                             Wrapping up our first project fully built on React,
-                            with the front-end's first integration tests
+                            with the front-end&apos;s first integration tests
                           </li>
                           <li>
                             Building mock-ups for an upcoming project, and
@@ -640,4 +640,4 @@ export const Layout = function () {
       </div>
     </div>
   );
-};
+}
