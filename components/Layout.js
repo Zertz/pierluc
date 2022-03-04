@@ -1,14 +1,18 @@
+import Image from "next/image";
+
 export function Layout() {
   return (
     <div className="h-screen flex overflow-hidden bg-gray-100">
       <div className="hidden md:flex md:flex-shrink-0">
         <div className="flex flex-col w-64 bg-gray-800">
           <div className="h-0 flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-            <div className="flex items-center flex-shrink-0 px-4">
-              <img
-                className="h-8 w-auto mr-2 rounded-full"
-                src="/pierluc.jpg"
+            <div className="flex items-center flex-shrink-0 gap-2 px-4">
+              <Image
                 alt="Pier-Luc Gendreau · Full-Stack Developer"
+                className="rounded-full"
+                src="/pierluc.jpg"
+                width={32}
+                height={32}
               />
               <p className="text-sm leading-5 font-medium text-white">
                 Pier-Luc Gendreau
@@ -171,14 +175,14 @@ export function Layout() {
                   </svg>
 
                   <div className="relative lg:flex lg:items-center">
-                    <div className="hidden lg:block lg:flex-shrink-0">
-                      <img
-                        className="h-64 w-64 rounded-full xl:h-80 xl:w-80"
-                        src="/pierluc.jpg"
+                    <div className="hidden lg:block lg:flex-shrink-0 h-64 w-64 xl:h-80 xl:w-80 relative">
+                      <Image
                         alt=""
+                        className="rounded-full"
+                        layout="fill"
+                        src="/pierluc.jpg"
                       />
                     </div>
-
                     <div className="relative lg:ml-10">
                       <svg
                         className="absolute top-0 left-0 transform -translate-x-8 -translate-y-24 h-36 w-36 text-indigo-200 opacity-50"
@@ -205,10 +209,12 @@ export function Layout() {
                         <footer className="mt-8">
                           <div className="flex">
                             <div className="flex-shrink-0 lg:hidden">
-                              <img
-                                className="h-12 w-12 rounded-full"
-                                src="/pierluc.jpg"
+                              <Image
                                 alt=""
+                                className="rounded-full"
+                                src="/pierluc.jpg"
+                                width={48}
+                                height={48}
                               />
                             </div>
                             <div className="ml-4 lg:ml-0">
