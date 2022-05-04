@@ -1,11 +1,7 @@
 export function Experience() {
   return (
     <>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 id="experience" className="text-2xl font-semibold text-gray-900">
-          Experience
-        </h1>
-      </div>
+      <h1 className="sr-only">Experience</h1>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <div className="py-4">
           <div className="bg-white shadow overflow-hidden sm:rounded-lg mb-8">
