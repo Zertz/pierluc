@@ -24,9 +24,9 @@ const userNavigation = [
 ];
 
 const tabs = [
-  { name: "About me", href: "#about" },
+  { name: "Me", href: "#me" },
   { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
+  { name: "Jobs", href: "#jobs" },
 ];
 
 export default function New() {
@@ -269,14 +269,14 @@ export default function New() {
                 </nav>
               </div>
             </div>
-            <TabPanel hidden={tab !== "#about"}>
+            <TabPanel hidden={tab !== "#me"}>
               <AboutMe />
               <TechnicalSkills />
             </TabPanel>
             <TabPanel hidden={tab !== "#projects"}>
               <Projects />
             </TabPanel>
-            <TabPanel hidden={tab !== "#experience"}>
+            <TabPanel hidden={tab !== "#jobs"}>
               <Experience />
             </TabPanel>
           </main>
