@@ -1,9 +1,8 @@
-import { BriefcaseIcon, ThumbUpIcon } from "@heroicons/react/outline";
+import { BriefcaseIcon, CodeIcon, ThumbUpIcon } from "@heroicons/react/outline";
 import classnames from "classnames";
 
 const timeline = [
   {
-    id: 1,
     content: "Developer Analyst III",
     target: "at FOCUS by TELUS",
     href: "#",
@@ -13,7 +12,15 @@ const timeline = [
     iconBackground: "bg-blue-500",
   },
   {
-    id: 1,
+    content: "Created",
+    target: "@tempocal/react",
+    href: "#",
+    date: "November 2021",
+    datetime: "2021-11-25",
+    icon: CodeIcon,
+    iconBackground: "bg-cyan-500",
+  },
+  {
     content: "Developer Analyst II",
     target: "at FOCUS by TELUS",
     href: "#",
@@ -23,7 +30,15 @@ const timeline = [
     iconBackground: "bg-blue-500",
   },
   {
-    id: 2,
+    content: "Created",
+    target: "react-headless-tabs",
+    href: "#",
+    date: "September 2020",
+    datetime: "2020-09-10",
+    icon: CodeIcon,
+    iconBackground: "bg-cyan-500",
+  },
+  {
     content: "Programmer",
     target: "at FOCUS by TELUS",
     href: "#",
@@ -33,7 +48,6 @@ const timeline = [
     iconBackground: "bg-green-500",
   },
   {
-    id: 3,
     content: "Senior Developer",
     target: "at Classcraft",
     href: "#",
@@ -43,7 +57,6 @@ const timeline = [
     iconBackground: "bg-blue-500",
   },
   {
-    id: 4,
     content: "Developer",
     target: "at Classcraft",
     href: "#",
@@ -53,7 +66,15 @@ const timeline = [
     iconBackground: "bg-green-500",
   },
   {
-    id: 5,
+    content: "Contributor",
+    target: "for express-restify-mongoose",
+    href: "#",
+    date: "August 2015",
+    datetime: "2015-08-17",
+    icon: CodeIcon,
+    iconBackground: "bg-cyan-500",
+  },
+  {
     content: "Developer",
     target: "at Sport Chrono",
     href: "#",
@@ -63,7 +84,6 @@ const timeline = [
     iconBackground: "bg-green-500",
   },
   {
-    id: 5,
     content: "IT Support",
     target: "at Informatique Orford",
     href: "#",
@@ -73,7 +93,6 @@ const timeline = [
     iconBackground: "bg-green-500",
   },
   {
-    id: 5,
     content: "Tech Reviewer",
     target: "at Neoseeker",
     href: "#",
@@ -89,7 +108,7 @@ export function Timeline() {
     <div className="flow-root">
       <ul role="list" className="-mb-8">
         {timeline.map((event, eventIdx) => (
-          <li key={event.id}>
+          <li key={`${event.content} ${event.target}`}>
             <div className="relative pb-8">
               {eventIdx !== timeline.length - 1 ? (
                 <span
