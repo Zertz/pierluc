@@ -4,7 +4,7 @@ import { SearchIcon } from "@heroicons/react/solid";
 import classnames from "classnames";
 import Head from "next/head";
 import Image from "next/image";
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { TabPanel, useTabs } from "react-headless-tabs";
 import { Experience } from "../components/Experience";
 import { Projects } from "../components/Projects";
@@ -30,8 +30,24 @@ const tabs = [
 export default function New() {
   const [tab, setTab] = useTabs(
     tabs.map(({ href }) => href),
-    typeof window === "undefined" ? undefined : window.location.hash
+    typeof window === "undefined"
+      ? undefined
+      : tabs.find(({ href }) => href === window.location.hash)?.href
   );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (window.location.hash === tab) {
+        return;
+      }
+
+      setTab(window.location.hash || tabs[0].href);
+    }, 125);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [setTab, tab]);
 
   return (
     <div className="min-h-full">
