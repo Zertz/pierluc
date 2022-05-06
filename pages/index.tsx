@@ -6,10 +6,8 @@ import Head from "next/head";
 import Image from "next/image";
 import { Fragment } from "react";
 import { TabPanel, useTabs } from "react-headless-tabs";
-import { AboutMe } from "../components/AboutMe";
 import { Experience } from "../components/Experience";
 import { Projects } from "../components/Projects";
-import { TechnicalSkills } from "../components/TechnicalSkills";
 import { Timeline } from "../components/Timeline";
 
 const user = {
@@ -233,8 +231,8 @@ export default function New() {
       </Popover>
 
       <div className="py-10">
-        <div className="max-w-3xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
-          <main className="lg:col-span-7">
+        <div className="max-w-5xl mx-auto sm:px-6 lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
+          <main className="lg:col-span-12">
             <div className="px-4 sm:px-0 mb-4">
               <div>
                 <nav
@@ -269,9 +267,8 @@ export default function New() {
                 </nav>
               </div>
             </div>
-            <TabPanel hidden={tab !== "#me"}>
-              <AboutMe />
-              <TechnicalSkills />
+            <TabPanel className="flex flex-col gap-6" hidden={tab !== "#me"}>
+              <Timeline />
             </TabPanel>
             <TabPanel hidden={tab !== "#projects"}>
               <Projects />
@@ -280,25 +277,6 @@ export default function New() {
               <Experience />
             </TabPanel>
           </main>
-          <aside className="hidden lg:block lg:col-span-5">
-            <div className="sticky top-4 space-y-4">
-              <section aria-labelledby="timeline-heading">
-                <div className="bg-white rounded-lg shadow">
-                  <div className="p-6">
-                    <h2
-                      id="timeline-heading"
-                      className="text-base font-medium text-gray-900"
-                    >
-                      Timeline
-                    </h2>
-                    <div className="mt-6 flow-root">
-                      <Timeline />
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </aside>
         </div>
       </div>
     </div>
