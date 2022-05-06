@@ -167,9 +167,6 @@ export default function New() {
             </div>
 
             <Popover.Panel as="nav" className="lg:hidden" aria-label="Global">
-              <div className="max-w-3xl mx-auto px-2 pt-2 pb-3 space-y-1 sm:px-4">
-                <Timeline />
-              </div>
               <div className="border-t border-gray-200 pt-4">
                 <div className="max-w-3xl mx-auto px-4 flex items-center sm:px-6">
                   <div className="flex-shrink-0">
