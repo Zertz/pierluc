@@ -28,7 +28,7 @@ const timeline = [
   },
   {
     content: "Created",
-    target: "Spruce, a MongoDB GUI for macOS",
+    target: "Spruce · MongoDB GUI for macOS",
     href: "#",
     date: "February 2021",
     datetime: "2021-02-21",
@@ -63,6 +63,16 @@ const timeline = [
     iconBackground: "bg-green-500",
   },
   {
+    content: "Created",
+    target:
+      "Canados · Interactive map of tornados in Canada and the United States",
+    href: "#",
+    date: "March 2020",
+    datetime: "2020-03-01",
+    icon: CodeIcon,
+    iconBackground: "bg-pink-500",
+  },
+  {
     content: "Attended",
     target: "Node+JS Interactive · Montreal",
     href: "#",
@@ -91,7 +101,7 @@ const timeline = [
   },
   {
     content: "Created",
-    target: "Jirafe, a Slack bot for Jira",
+    target: "Jirafe · Manage Jira Cloud issues in the comfort of Slack",
     href: "#",
     date: "April 2018",
     datetime: "2018-04-07",

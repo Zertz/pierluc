@@ -27,7 +27,7 @@ const tabs = [
   { name: "Jobs", href: "#jobs" },
 ];
 
-export default function New() {
+export default function Home() {
   const [tab, setTab] = useTabs(
     tabs.map(({ href }) => href),
     typeof window === "undefined"

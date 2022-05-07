@@ -12,7 +12,7 @@ import {
 import classnames from "classnames";
 import { Fragment, ReactNode } from "react";
 
-type PostType = {
+export interface IPost {
   id: string;
   likes: string;
   replies: string;
@@ -20,16 +20,15 @@ type PostType = {
   author: {
     name: string;
     imageUrl: string;
-    href: string;
   };
   date: string;
   datetime: string;
   href: string;
   title: string;
   body: ReactNode;
-};
+}
 
-export function Post({ post }: { post: PostType }) {
+export function Post({ post }: { post: IPost }) {
   return (
     <li className="bg-white px-4 py-6 shadow sm:p-6 sm:rounded-lg">
       <article aria-labelledby={"post-title-" + post.id}>
@@ -44,14 +43,12 @@ export function Post({ post }: { post: PostType }) {
             </div>
             <div className="min-w-0 flex-1">
               <p className="text-sm font-medium text-gray-900">
-                <a href={post.author.href} className="hover:underline">
+                <a href={post.href} className="hover:underline">
                   {post.author.name}
                 </a>
               </p>
               <p className="text-sm text-gray-500">
-                <a href={post.href} className="hover:underline">
-                  <time dateTime={post.datetime}>{post.date}</time>
-                </a>
+                <time dateTime={post.datetime}>{post.date}</time>
               </p>
             </div>
             <div className="flex-shrink-0 self-center flex">
