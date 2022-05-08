@@ -195,7 +195,7 @@ export function Timeline() {
   return (
     <section
       aria-labelledby="timeline-heading"
-      className="bg-white p-6 rounded-lg shadow"
+      className="bg-white px-4 py-6 shadow sm:p-6 sm:rounded-lg"
     >
       <h2 id="timeline-heading" className="text-base font-medium text-gray-900">
         Timeline
