@@ -13,7 +13,7 @@ const jobs: IPost[] = [
     },
     date: "March 2020 - Present",
     datetime: "2020-03-23T09:00:00",
-    href: "#",
+    href: "https://focusoptimization.com/",
     title:
       "Primarily working on a large web app with a TypeScript backend and jQuery frontend.",
     body: (
@@ -51,7 +51,7 @@ const jobs: IPost[] = [
     },
     date: "August 2016 - March 2020",
     datetime: "2020-03-23T09:00:00",
-    href: "#",
+    href: "https://www.classcraft.com/",
     title:
       "Contributed to and maintained a large Meteor application built with Node.js, React, Redux, Flow, Stylus, ElasticSearch, and MongoDB.",
     body: (
@@ -85,7 +85,7 @@ const jobs: IPost[] = [
     },
     date: "July 2013 - June 2016",
     datetime: "2020-03-23T09:00:00",
-    href: "#",
+    href: "https://sportchrono.com/",
     title:
       "Rebuilt the web app with Node.js, Angular.js, and MongoDB, maintained desktop apps built with C# .NET and SQL Server, and tinkered with RFID hardware.",
     body: (

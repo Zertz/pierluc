@@ -11,7 +11,7 @@ const timeline = [
   {
     content: "Developer Analyst III",
     target: "at FOCUS by TELUS",
-    href: "#",
+    href: "https://focusoptimization.com/",
     date: "December 2021",
     datetime: "2021-12-15",
     icon: ThumbUpIcon,
@@ -20,7 +20,7 @@ const timeline = [
   {
     content: "Created",
     target: "@tempocal/react",
-    href: "#",
+    href: "https://tempocal.pierluc.io/",
     date: "November 2021",
     datetime: "2021-11-25",
     icon: CodeIcon,
@@ -29,7 +29,7 @@ const timeline = [
   {
     content: "Created",
     target: "Spruce · MongoDB GUI for macOS",
-    href: "#",
+    href: "https://spruce.pierluc.io/",
     date: "February 2021",
     datetime: "2021-02-21",
     icon: CodeIcon,
@@ -38,7 +38,7 @@ const timeline = [
   {
     content: "Developer Analyst II",
     target: "at FOCUS by TELUS",
-    href: "#",
+    href: "https://focusoptimization.com/",
     date: "December 2020",
     datetime: "2020-12-15",
     icon: ThumbUpIcon,
@@ -47,7 +47,7 @@ const timeline = [
   {
     content: "Created",
     target: "react-headless-tabs",
-    href: "#",
+    href: "https://react-headless-tabs.pierluc.io/",
     date: "September 2020",
     datetime: "2020-09-10",
     icon: CodeIcon,
@@ -56,7 +56,7 @@ const timeline = [
   {
     content: "Programmer",
     target: "at FOCUS by TELUS",
-    href: "#",
+    href: "https://focusoptimization.com/",
     date: "March 2020",
     datetime: "2020-03-23",
     icon: BriefcaseIcon,
@@ -66,7 +66,7 @@ const timeline = [
     content: "Created",
     target:
       "Canados · Interactive map of tornados in Canada and the United States",
-    href: "#",
+    href: "http://canados.pierluc.io/",
     date: "March 2020",
     datetime: "2020-03-01",
     icon: CodeIcon,
@@ -84,7 +84,7 @@ const timeline = [
   {
     content: "Senior Developer",
     target: "at Classcraft",
-    href: "#",
+    href: "https://www.classcraft.com/",
     date: "August 2019",
     datetime: "2019-08-01",
     icon: ThumbUpIcon,
@@ -102,7 +102,7 @@ const timeline = [
   {
     content: "Created",
     target: "Jirafe · Manage Jira Cloud issues in the comfort of Slack",
-    href: "#",
+    href: "https://jirafe-zertz.vercel.app/",
     date: "April 2018",
     datetime: "2018-04-07",
     icon: CodeIcon,
@@ -138,7 +138,7 @@ const timeline = [
   {
     content: "Developer",
     target: "at Classcraft",
-    href: "#",
+    href: "https://www.classcraft.com/",
     date: "August 2016",
     datetime: "2016-08-01",
     icon: BriefcaseIcon,
@@ -156,7 +156,7 @@ const timeline = [
   {
     content: "Contributor",
     target: "for express-restify-mongoose",
-    href: "#",
+    href: "https://github.com/florianholzapfel/express-restify-mongoose",
     date: "August 2015",
     datetime: "2015-08-17",
     icon: CodeIcon,
@@ -165,7 +165,7 @@ const timeline = [
   {
     content: "Developer",
     target: "at Sport Chrono",
-    href: "#",
+    href: "https://sportchrono.com/",
     date: "July 2013",
     datetime: "2013-07-01",
     icon: BriefcaseIcon,

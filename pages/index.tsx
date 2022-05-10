@@ -17,8 +17,8 @@ const user = {
 };
 
 const userNavigation = [
-  { name: "GitHub", href: "#" },
-  { name: "LinkedIn", href: "#" },
+  { name: "GitHub", href: "https://github.com/Zertz" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/pierlucgendreau/" },
 ];
 
 const tabs = [

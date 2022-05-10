@@ -13,7 +13,7 @@ const projects: IPost[] = [
     },
     date: "April 2018 - May 2022",
     datetime: "2018-04-07T09:00:00",
-    href: "#",
+    href: "https://jirafe-zertz.vercel.app/",
     title:
       "Built from the ground up with React, Node.js, Redis, ZEIT Now, Google Cloud Datastore, Pub/Sub, Scheduler, and BigQuery.",
     body: (
