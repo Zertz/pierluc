@@ -17,7 +17,7 @@ const jobs: IPost[] = [
     title:
       "Primarily working on a large web app with a TypeScript backend and jQuery frontend.",
     body: (
-      <ul className="list-disc list-inside space-y-2">
+      <ul className="list-inside list-disc space-y-2">
         <li>
           Replaced in-house client build with webpack while retaining full
           backward compatibility with existing infrastructure
@@ -55,7 +55,7 @@ const jobs: IPost[] = [
     title:
       "Contributed to and maintained a large Meteor application built with Node.js, React, Redux, Flow, Stylus, ElasticSearch, and MongoDB.",
     body: (
-      <ul className="list-disc list-inside space-y-2">
+      <ul className="list-inside list-disc space-y-2">
         <li>
           Led a team of three other developers working on the core application
         </li>
@@ -89,7 +89,7 @@ const jobs: IPost[] = [
     title:
       "Rebuilt the web app with Node.js, Angular.js, and MongoDB, maintained desktop apps built with C# .NET and SQL Server, and tinkered with RFID hardware.",
     body: (
-      <ul className="list-disc list-inside space-y-2">
+      <ul className="list-inside list-disc space-y-2">
         <li>
           Migrated a manual, slow and complex procedure involving Microsoft
           Access to export results to delivering them automatically, in
