@@ -19,8 +19,14 @@ export interface IPost {
   views: string;
   author: {
     name: string;
-    imageUrl: string;
-  };
+  } & (
+    | {
+        emoji: string;
+      }
+    | {
+        imageUrl: string;
+      }
+  );
   date: string;
   datetime: string;
   href: string;
@@ -30,16 +36,22 @@ export interface IPost {
 
 export function Post({ post }: { post: IPost }) {
   return (
-    <li className="bg-white px-4 py-6 shadow sm:p-6 sm:rounded-lg">
+    <li className="bg-white px-4 py-6 shadow sm:rounded-lg sm:p-6">
       <article aria-labelledby={"post-title-" + post.id}>
         <div>
           <div className="flex space-x-3">
             <div className="flex-shrink-0">
-              <img
-                className="h-10 w-10 rounded-full"
-                src={post.author.imageUrl}
-                alt=""
-              />
+              {"imageUrl" in post.author ? (
+                <img
+                  className="h-10 w-10 rounded-full"
+                  src={post.author.imageUrl}
+                  alt=""
+                />
+              ) : (
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-2xl">
+                  {post.author.emoji}
+                </span>
+              )}
             </div>
             <div className="min-w-0 flex-1">
               <p className="text-sm font-medium text-gray-900">
@@ -51,10 +63,10 @@ export function Post({ post }: { post: IPost }) {
                 <time dateTime={post.datetime}>{post.date}</time>
               </p>
             </div>
-            <div className="flex-shrink-0 self-center flex">
+            <div className="flex flex-shrink-0 self-center">
               <Menu as="div" className="relative inline-block text-left">
                 <div>
-                  <Menu.Button className="-m-2 p-2 rounded-full flex items-center text-gray-400 hover:text-gray-600">
+                  <Menu.Button className="-m-2 flex items-center rounded-full p-2 text-gray-400 hover:text-gray-600">
                     <span className="sr-only">Open options</span>
                     <DotsVerticalIcon className="h-5 w-5" aria-hidden="true" />
                   </Menu.Button>
@@ -69,7 +81,7 @@ export function Post({ post }: { post: IPost }) {
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95"
                 >
-                  <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div className="py-1">
                       <Menu.Item>
                         {({ active }) => (
@@ -141,7 +153,7 @@ export function Post({ post }: { post: IPost }) {
             {post.title}
           </h2>
         </div>
-        <div className="mt-2 text-sm text-gray-700 space-y-4">{post.body}</div>
+        <div className="mt-2 space-y-4 text-sm text-gray-700">{post.body}</div>
         <div className="mt-6 flex justify-between space-x-8">
           <div className="flex space-x-6">
             <span className="inline-flex items-center text-sm">
