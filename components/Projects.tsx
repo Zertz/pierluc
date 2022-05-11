@@ -2,6 +2,63 @@ import { IPost, Post } from "./Post";
 
 const projects: IPost[] = [
   {
+    id: "Tempocal",
+    likes: "29",
+    replies: "11",
+    views: "2.7k",
+    author: {
+      name: "Tempocal · Highly flexible building blocks to craft calendars with Temporal API",
+      emoji: "📅",
+    },
+    date: "November 2021 - Present",
+    datetime: "2021-11-25T09:00:00",
+    href: "https://tempocal.pierluc.io/",
+    title: "React library, built with TypeScript",
+    body: (
+      <ul className="list-inside list-disc space-y-2">
+        <li>Yes</li>
+      </ul>
+    ),
+  },
+  {
+    id: "Spruce",
+    likes: "29",
+    replies: "11",
+    views: "2.7k",
+    author: {
+      name: "Spruce for MongoDB",
+      emoji: "🌲",
+    },
+    date: "February 2021 - Present",
+    datetime: "2021-02-21T09:00:00",
+    href: "https://spruce.pierluc.io/",
+    title: "Electron app built with React and TypeScript",
+    body: (
+      <ul className="list-inside list-disc space-y-2">
+        <li>Yes</li>
+      </ul>
+    ),
+  },
+  {
+    id: "react-headless-tabs",
+    likes: "29",
+    replies: "11",
+    views: "2.7k",
+    author: {
+      name: "react-headless-tabs · Headless and highly flexible tab-like primitives built with react hooks",
+      emoji: "🧩",
+    },
+    date: "September 2020 - Present",
+    datetime: "2020-09-10T09:00:00",
+    href: "https://react-headless-tabs.pierluc.io/",
+    title: "React library, built with TypeScript",
+    body: (
+      <ul className="list-inside list-disc space-y-2">
+        <li>Yes</li>
+      </ul>
+    ),
+  },
+  {
     id: "jirafe",
     likes: "29",
     replies: "11",
