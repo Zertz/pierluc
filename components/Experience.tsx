@@ -15,26 +15,29 @@ const jobs: IPost[] = [
     datetime: "2020-03-23T09:00:00",
     href: "https://focusoptimization.com/",
     title:
-      "Primarily working on a large web app with a TypeScript backend and jQuery frontend.",
+      "Large web app with a MySQL database, Node.js backend, and a jQuery frontend. Progressively evolving to rely more and more on modern tools, including React and TypeScript.",
     body: (
       <ul className="list-inside list-disc space-y-2">
         <li>
-          Replaced in-house client build with webpack while retaining full
-          backward compatibility with existing infrastructure
+          Replaced in-house build tools with webpack, while retaining full
+          backward compatibility with existing processes.
         </li>
         <li>
-          Introduced the team to React and immediately saw significant gains in
-          both quality and speed compared to existing code based on jQuery
+          Introduced the team to React and rapidly saw significant gains in
+          performance, quality and velocity compared to existing features built
+          with a custom framework.
         </li>
         <li>
-          Quickly shipped a messaging component as part of a larger project
+          Reduced build time from over 60 seconds to under four seconds, and
+          added hot-reload, dramatically improving developer experience.
         </li>
         <li>
-          Wrapping up our first project fully built on React, with the
-          front-end&apos;s first integration tests
+          Analyzed, debugged, and brought large performance improvement to
+          existing, and largely undocumented features.
         </li>
         <li>
-          Building mock-ups for an upcoming project, and integrating Storybook
+          Implemented features from the ground up: data modeling, prototyping,
+          and coding.
         </li>
       </ul>
     ),
