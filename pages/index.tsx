@@ -22,7 +22,7 @@ const userNavigation = [
 ];
 
 const tabs = [
-  { name: "Me", href: "#me" },
+  { name: "Timeline", href: "#timeline" },
   { name: "Projects", href: "#projects" },
   { name: "Jobs", href: "#jobs" },
 ];
@@ -280,7 +280,10 @@ export default function Home() {
                 </nav>
               </div>
             </div>
-            <TabPanel className="flex flex-col gap-6" hidden={tab !== "#me"}>
+            <TabPanel
+              className="flex flex-col gap-6"
+              hidden={tab !== "#timeline"}
+            >
               <Timeline />
             </TabPanel>
             <TabPanel hidden={tab !== "#projects"}>

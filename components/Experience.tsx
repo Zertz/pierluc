@@ -68,10 +68,7 @@ const jobs: IPost[] = [
           Triaged bugs and worked with the support team to solve customer facing
           issues
         </li>
-        <li>
-          Rebuilt authentication in a dedicated service and transferred
-          knowledge to another team
-        </li>
+        <li>Rebuilt authentication in a dedicated service</li>
         <li>Automated and streamlined various workflows for internal teams</li>
       </ul>
     ),
@@ -109,7 +106,7 @@ const jobs: IPost[] = [
 export function Experience() {
   return (
     <>
-      <h1 className="sr-only">Experience</h1>
+      <h2 className="sr-only">Experience</h2>
       <ul role="list" className="space-y-4">
         {jobs.map((post) => (
           <Post key={post.id} post={post} />

@@ -193,14 +193,9 @@ const timeline = [
 
 export function Timeline() {
   return (
-    <section
-      aria-labelledby="timeline-heading"
-      className="bg-white px-4 py-6 shadow sm:rounded-lg sm:p-6"
-    >
-      <h2 id="timeline-heading" className="text-base font-medium text-gray-900">
-        Timeline
-      </h2>
-      <div className="mt-6 flow-root">
+    <section className="bg-white px-4 py-6 shadow sm:rounded-lg sm:p-6">
+      <h2 className="sr-only">Timeline</h2>
+      <div className="flow-root">
         <ul role="list" className="-mb-8">
           {timeline.map((event, eventIdx) => (
             <li key={`${event.content} ${event.target}`}>
