@@ -1,6 +1,11 @@
 import { Menu, Popover, Transition } from "@headlessui/react";
-import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import { SearchIcon } from "@heroicons/react/solid";
+import {
+  BriefcaseIcon,
+  CodeIcon,
+  MenuIcon,
+  SearchIcon,
+  XIcon,
+} from "@heroicons/react/outline";
 import classnames from "classnames";
 import Head from "next/head";
 import Image from "next/image";
@@ -18,8 +23,12 @@ const user = {
 };
 
 const userNavigation = [
-  { name: "GitHub", href: "https://github.com/Zertz" },
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/pierlucgendreau/" },
+  { name: "GitHub", href: "https://github.com/Zertz", icon: CodeIcon },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/pierlucgendreau/",
+    icon: BriefcaseIcon,
+  },
 ];
 
 const tabs = [
@@ -66,7 +75,6 @@ export default function Home({ repositories }: Props) {
       <Head>
         <title>Pier-Luc · (Java|Type)Script Developer</title>
       </Head>
-      {/* When the mobile menu is open, add `overflow-hidden` to the `body` element to prevent double scrollbars */}
       <Popover
         as="header"
         className={({ open }) =>
@@ -83,10 +91,12 @@ export default function Home({ repositories }: Props) {
                 <div className="flex md:absolute md:inset-y-0 md:left-0 lg:static xl:col-span-2">
                   <div className="flex flex-shrink-0 items-center">
                     <a href="#">
-                      <img
-                        className="block h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/workflow-mark.svg?color=rose&shade=500"
-                        alt="Workflow"
+                      <Image
+                        width={40}
+                        height={40}
+                        className="rounded-full"
+                        src={user.imageUrl}
+                        alt=""
                       />
                     </a>
                   </div>
@@ -116,7 +126,6 @@ export default function Home({ repositories }: Props) {
                   </div>
                 </div>
                 <div className="flex items-center md:absolute md:inset-y-0 md:right-0 lg:hidden">
-                  {/* Mobile menu button */}
                   <Popover.Button className="-mx-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-rose-500">
                     <span className="sr-only">Open menu</span>
                     {open ? (
@@ -127,21 +136,6 @@ export default function Home({ repositories }: Props) {
                   </Popover.Button>
                 </div>
                 <div className="hidden lg:flex lg:items-center lg:justify-end xl:col-span-4">
-                  <a
-                    href="#"
-                    className="text-sm font-medium text-gray-900 hover:underline"
-                  >
-                    Go Premium
-                  </a>
-                  <a
-                    href="#"
-                    className="ml-5 flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2"
-                  >
-                    <span className="sr-only">View notifications</span>
-                    <BellIcon className="h-6 w-6" aria-hidden="true" />
-                  </a>
-
-                  {/* Profile dropdown */}
                   <Menu as="div" className="relative ml-5 flex-shrink-0">
                     <div>
                       <Menu.Button className="flex rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2">
@@ -171,10 +165,16 @@ export default function Home({ repositories }: Props) {
                               <a
                                 href={item.href}
                                 className={classnames(
-                                  active ? "bg-gray-100" : "",
-                                  "block py-2 px-4 text-sm text-gray-700"
+                                  active
+                                    ? "bg-gray-100 text-gray-900"
+                                    : "text-gray-700",
+                                  "flex px-4 py-2 text-sm"
                                 )}
                               >
+                                <item.icon
+                                  className="mr-3 h-5 w-5 text-gray-400"
+                                  aria-hidden="true"
+                                />
                                 {item.name}
                               </a>
                             )}
@@ -183,23 +183,17 @@ export default function Home({ repositories }: Props) {
                       </Menu.Items>
                     </Transition>
                   </Menu>
-
-                  <a
-                    href="#"
-                    className="ml-6 inline-flex items-center rounded-md border border-transparent bg-rose-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2"
-                  >
-                    New Post
-                  </a>
                 </div>
               </div>
             </div>
-
             <Popover.Panel as="nav" className="lg:hidden" aria-label="Global">
               <div className="border-t border-gray-200 pt-4">
                 <div className="mx-auto flex max-w-3xl items-center px-4 sm:px-6">
                   <div className="flex-shrink-0">
-                    <img
-                      className="h-10 w-10 rounded-full"
+                    <Image
+                      width={40}
+                      height={40}
+                      className="rounded-full"
                       src={user.imageUrl}
                       alt=""
                     />
@@ -212,13 +206,6 @@ export default function Home({ repositories }: Props) {
                       {user.email}
                     </div>
                   </div>
-                  <button
-                    type="button"
-                    className="ml-auto flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2"
-                  >
-                    <span className="sr-only">View notifications</span>
-                    <BellIcon className="h-6 w-6" aria-hidden="true" />
-                  </button>
                 </div>
                 <div className="mx-auto mt-3 max-w-3xl space-y-1 px-2 sm:px-4">
                   {userNavigation.map((item) => (
@@ -232,29 +219,10 @@ export default function Home({ repositories }: Props) {
                   ))}
                 </div>
               </div>
-
-              <div className="mx-auto mt-6 max-w-3xl px-4 sm:px-6">
-                <a
-                  href="#"
-                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-rose-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-rose-700"
-                >
-                  New Post
-                </a>
-
-                <div className="mt-6 flex justify-center">
-                  <a
-                    href="#"
-                    className="text-base font-medium text-gray-900 hover:underline"
-                  >
-                    Go Premium
-                  </a>
-                </div>
-              </div>
             </Popover.Panel>
           </>
         )}
       </Popover>
-
       <div className="py-10">
         <div className="mx-auto max-w-5xl sm:px-6 lg:grid lg:grid-cols-12 lg:gap-8 lg:px-8">
           <main className="lg:col-span-12">

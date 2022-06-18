@@ -1,5 +1,9 @@
-import { StarIcon } from "@heroicons/react/outline";
-import { BookOpenIcon, CodeIcon, GlobeAltIcon } from "@heroicons/react/solid";
+import {
+  BookOpenIcon,
+  CodeIcon,
+  GlobeAltIcon,
+  StarIcon,
+} from "@heroicons/react/outline";
 import { Repository } from "../pages";
 
 interface IProject {
