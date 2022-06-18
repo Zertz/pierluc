@@ -1,73 +1,74 @@
-import { BookOpenIcon, CodeIcon } from "@heroicons/react/solid";
+import { StarIcon } from "@heroicons/react/outline";
+import { BookOpenIcon, CodeIcon, GlobeAltIcon } from "@heroicons/react/solid";
+import { Repository } from "../pages";
 
 interface IProject {
   id: string;
   title: string;
-  stars: number;
   emoji: string;
-  date: string;
-  code?: string;
-  website: string;
+  labels: string[];
+  repository?: string;
+  documentation?: string;
+  website?: string;
 }
 
-const projects: IProject[] = [
+export const projects: IProject[] = [
   {
     id: "Tempocal",
     title:
-      "Highly flexible building blocks to craft calendars with Temporal API",
-    stars: 29,
+      "Infinitely flexible building blocks to craft calendars with the bleeding edge Temporal API",
     emoji: "📅",
-    date: "November 2021 - Present",
-    code: "https://github.com/Zertz/tempocal",
-    website: "https://tempocal.pierluc.io/",
+    labels: ["TypeScript", "React", "Hooks"],
+    repository: "Zertz/tempocal",
+    documentation: "https://tempocal.pierluc.io/",
   },
   {
-    id: "Spruce",
+    id: "Spruce for MongoDB",
     title: "",
-    stars: 29,
     emoji: "🌲",
-    date: "February 2021 - Present",
+    labels: ["TypeScript", "Electron", "React"],
     website: "https://spruce.pierluc.io/",
   },
   {
     id: "react-headless-tabs",
     title:
       "Headless and highly flexible tab-like primitives built with react hooks",
-    stars: 29,
     emoji: "🧩",
-    date: "September 2020 - Present",
-    code: "https://github.com/Zertz/react-headless-tabs",
-    website: "https://react-headless-tabs.pierluc.io/",
+    labels: ["TypeScript", "React", "Hooks"],
+    repository: "Zertz/react-headless-tabs",
+    documentation: "https://react-headless-tabs.pierluc.io/",
   },
   {
     id: "Jirafe",
     title: "Manage Jira Cloud issues in the comfort of Slack",
-    stars: 29,
     emoji: "🦒",
-    date: "April 2018 - May 2022",
+    labels: ["TypeScript", "Next.js"],
     website: "https://jirafe-zertz.vercel.app/",
   },
   {
     id: "Canados",
-    title: "Interactive map of tornados in Canada and the United States",
-    stars: 29,
+    title: "Interactive heatmap of tornados in Canada and the United States",
     emoji: "🌪",
-    date: "March 2020 - Present",
-    code: "https://github.com/Zertz/canados",
+    labels: ["TypeScript", "Next.js"],
+    repository: "Zertz/canados",
     website: "https://canados.vercel.app/",
   },
   {
     id: "express-restify-mongoose",
-    title: "Easily restify mongoose schemas",
-    stars: 29,
+    title: "Automatically generate queryable REST APIs from mongoose schemas",
     emoji: "🐒",
-    date: "August 2015 - June 2018",
-    code: "https://github.com/florianholzapfel/express-restify-mongoose",
-    website: "https://florianholzapfel.github.io/express-restify-mongoose/",
+    labels: ["JavaScript", "Express", "MongoDB"],
+    repository: "florianholzapfel/express-restify-mongoose",
+    documentation:
+      "https://florianholzapfel.github.io/express-restify-mongoose/",
   },
 ];
 
-export function Projects() {
+export function Projects({
+  repositories,
+}: {
+  repositories: Record<string, Repository>;
+}) {
   return (
     <>
       <h2 className="sr-only">Open source</h2>
@@ -85,44 +86,77 @@ export function Projects() {
                 {project.id}
               </h3>
               <dl className="mt-1 flex flex-grow flex-col justify-between">
-                <dt className="sr-only">Title</dt>
+                <dt className="sr-only">Name</dt>
                 <dd className="text-sm text-gray-500">{project.title}</dd>
-                <dt className="sr-only">Role</dt>
-                <dd className="mt-3">
-                  <span className="rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-800">
-                    {project.stars}
-                  </span>
+                <dt className="sr-only">Labels</dt>
+                <dd className="mt-3 flex flex-wrap justify-center gap-2">
+                  {project.labels.map((label) => (
+                    <span
+                      key={label}
+                      className="rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-800"
+                    >
+                      {label}
+                    </span>
+                  ))}
                 </dd>
               </dl>
             </div>
             <div>
               <div className="-mt-px flex divide-x divide-gray-200">
-                {project.code && (
+                {repositories[project.repository] && (
                   <div className="flex w-0 flex-1">
                     <a
-                      href={project.code}
+                      href={repositories[project.repository].html_url}
                       className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center rounded-bl-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500"
                     >
                       <CodeIcon
                         className="h-5 w-5 text-gray-400"
                         aria-hidden="true"
                       />
-                      <span className="ml-3">GitHub</span>
+                      <span className="ml-2">GitHub</span>
+                      {repositories[project.repository].stargazers_count >=
+                        10 && (
+                        <>
+                          <StarIcon
+                            className="ml-2 h-5 w-5 text-gray-400"
+                            aria-hidden="true"
+                          />
+                          <span className="ml-2">
+                            {repositories[project.repository].stargazers_count}
+                          </span>
+                        </>
+                      )}
                     </a>
                   </div>
                 )}
-                <div className="-ml-px flex w-0 flex-1">
-                  <a
-                    href={project.website}
-                    className="relative inline-flex w-0 flex-1 items-center justify-center rounded-br-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500"
-                  >
-                    <BookOpenIcon
-                      className="h-5 w-5 text-gray-400"
-                      aria-hidden="true"
-                    />
-                    <span className="ml-3">Website</span>
-                  </a>
-                </div>
+                {project.documentation && (
+                  <div className="-ml-px flex w-0 flex-1">
+                    <a
+                      href={project.documentation}
+                      className="relative inline-flex w-0 flex-1 items-center justify-center rounded-br-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500"
+                    >
+                      <BookOpenIcon
+                        className="h-5 w-5 text-gray-400"
+                        aria-hidden="true"
+                      />
+                      <span className="ml-2">Documentation</span>
+                    </a>
+                  </div>
+                )}
+                {project.website && (
+                  <div className="-ml-px flex w-0 flex-1">
+                    <a
+                      href={project.website}
+                      className="relative inline-flex w-0 flex-1 items-center justify-center rounded-br-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500"
+                    >
+                      <GlobeAltIcon
+                        className="h-5 w-5 text-gray-400"
+                        aria-hidden="true"
+                      />
+                      <span className="ml-2">Website</span>
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           </li>

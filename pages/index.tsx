@@ -7,8 +7,9 @@ import Image from "next/image";
 import { Fragment, useEffect } from "react";
 import { TabPanel, useTabs } from "react-headless-tabs";
 import { Experience } from "../components/Experience";
-import { Projects } from "../components/Projects";
+import { projects, Projects } from "../components/Projects";
 import { Timeline } from "../components/Timeline";
+import { GitHubRepository } from "../types";
 
 const user = {
   name: "Pier-Luc Gendreau",
@@ -27,7 +28,14 @@ const tabs = [
   { name: "Jobs", href: "#jobs" },
 ];
 
-export default function Home() {
+type Props = Awaited<ReturnType<typeof getStaticProps>>["props"];
+
+export type Repository = Pick<
+  GitHubRepository,
+  "html_url" | "stargazers_count"
+>;
+
+export default function Home({ repositories }: Props) {
   const [tab, setTab] = useTabs(
     tabs.map(({ href }) => href),
     typeof window === "undefined"
@@ -291,7 +299,7 @@ export default function Home() {
               <Timeline />
             </TabPanel>
             <TabPanel hidden={tab !== "#projects"}>
-              <Projects />
+              <Projects repositories={repositories} />
             </TabPanel>
             <TabPanel hidden={tab !== "#jobs"}>
               <Experience />
@@ -301,4 +309,36 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const responses = await Promise.all(
+    projects
+      .filter(({ repository }) => repository)
+      .map(({ repository }) =>
+        fetch(`https://api.github.com/repos/${repository}`, {
+          headers: {
+            Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
+          },
+        })
+      )
+  );
+
+  const githubRepositories = await Promise.all<GitHubRepository>(
+    responses.map((response) => response.json())
+  );
+
+  const repositories: Record<string, Repository> = Object.fromEntries(
+    githubRepositories.map(({ full_name, html_url, stargazers_count }) => [
+      full_name,
+      { html_url, stargazers_count },
+    ])
+  );
+
+  return {
+    props: {
+      repositories,
+    },
+    revalidate: 60 * 5,
+  };
 }
