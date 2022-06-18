@@ -37,11 +37,15 @@ export default function Home() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (window.location.hash === tab) {
+      const hashTab = tabs.find(
+        ({ href }) => href === window.location.hash
+      )?.href;
+
+      if (hashTab === tab) {
         return;
       }
 
-      setTab(window.location.hash || tabs[0].href);
+      setTab(hashTab || tabs[0].href);
     }, 125);
 
     return () => {
