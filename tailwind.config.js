@@ -2,7 +2,7 @@ const colors = require("tailwindcss/colors");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  content: ["./pages/**/*.tsx", "./components/**/*.tsx"],
+  content: ["./pages/**/*.{js,tsx}", "./components/**/*.tsx"],
   plugins: [require("@tailwindcss/forms")],
   theme: {
     extend: {
