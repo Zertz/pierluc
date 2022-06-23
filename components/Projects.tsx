@@ -80,18 +80,20 @@ export function Projects({
         {projects.map((project) => (
           <li
             key={project.id}
-            className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow"
+            className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow dark:bg-slate-800"
           >
             <div className="flex flex-1 flex-col p-8">
               <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-gray-200 text-2xl">
                 {project.emoji}
               </span>
-              <h3 className="mt-6 text-sm font-medium text-gray-900">
+              <h3 className="mt-6 text-sm font-medium text-gray-800 dark:text-slate-200">
                 {project.id}
               </h3>
               <dl className="mt-1 flex flex-grow flex-col justify-between">
                 <dt className="sr-only">Name</dt>
-                <dd className="text-sm text-gray-500">{project.title}</dd>
+                <dd className="text-sm text-gray-500 dark:text-slate-400">
+                  {project.title}
+                </dd>
                 <dt className="sr-only">Labels</dt>
                 <dd className="mt-3 flex flex-wrap justify-center gap-2">
                   {project.labels.map((label) => (
@@ -111,7 +113,7 @@ export function Projects({
                   <div className="flex w-0 flex-1">
                     <a
                       href={repositories[project.repository].html_url}
-                      className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center rounded-bl-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500"
+                      className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center rounded-bl-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500 dark:text-slate-300"
                     >
                       <CodeIcon
                         className="h-5 w-5 text-gray-400"
@@ -137,7 +139,7 @@ export function Projects({
                   <div className="-ml-px flex w-0 flex-1">
                     <a
                       href={project.documentation}
-                      className="relative inline-flex w-0 flex-1 items-center justify-center rounded-br-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500"
+                      className="relative inline-flex w-0 flex-1 items-center justify-center rounded-br-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500 dark:text-slate-300 dark:hover:text-slate-400"
                     >
                       <BookOpenIcon
                         className="h-5 w-5 text-gray-400"
@@ -151,7 +153,7 @@ export function Projects({
                   <div className="-ml-px flex w-0 flex-1">
                     <a
                       href={project.website}
-                      className="relative inline-flex w-0 flex-1 items-center justify-center rounded-br-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500"
+                      className="relative inline-flex w-0 flex-1 items-center justify-center rounded-br-lg border border-transparent py-4 text-sm font-medium  text-gray-700 hover:text-gray-500 dark:text-slate-300 dark:hover:text-slate-400"
                     >
                       <GlobeAltIcon
                         className="h-5 w-5 text-gray-400"

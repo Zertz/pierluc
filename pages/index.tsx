@@ -73,7 +73,7 @@ export default function Home({
         className={({ open }) =>
           classnames(
             open ? "fixed inset-x-0 top-0 z-40 overflow-y-auto" : "",
-            "bg-white shadow-sm sm:static sm:overflow-y-visible"
+            "bg-white shadow-sm dark:bg-slate-800 sm:static sm:overflow-y-visible"
           )
         }
       >
@@ -92,10 +92,10 @@ export default function Home({
                     />
                   </div>
                   <div className="ml-3">
-                    <div className="text-base font-medium text-gray-800">
+                    <div className="text-base font-medium text-gray-800 dark:text-slate-200">
                       Pier-Luc Gendreau
                     </div>
-                    <div className="text-sm font-medium text-gray-500">
+                    <div className="text-sm font-medium text-gray-500 dark:text-slate-400">
                       (Java|Type)Script Developer
                     </div>
                   </div>
@@ -105,7 +105,7 @@ export default function Home({
                     <a
                       key={item.name}
                       href={item.href}
-                      className="flex items-center rounded-md py-2 px-3 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900"
+                      className="flex items-center rounded-md py-2 px-3 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-600 dark:hover:text-slate-300"
                     >
                       <item.icon
                         className="mr-3 h-5 w-5 text-gray-400"
@@ -115,7 +115,7 @@ export default function Home({
                     </a>
                   ))}
                 </div>
-                <Popover.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-rose-500 sm:hidden">
+                <Popover.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-rose-500 dark:hover:bg-slate-700 sm:hidden">
                   <span className="sr-only">Open menu</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -132,7 +132,7 @@ export default function Home({
                     <a
                       key={item.name}
                       href={item.href}
-                      className="flex items-center rounded-md py-2 px-3 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900"
+                      className="flex items-center rounded-md py-2 px-3 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-600 dark:hover:text-slate-300"
                     >
                       <item.icon
                         className="mr-3 h-5 w-5 text-gray-400"
@@ -160,11 +160,11 @@ export default function Home({
                 aria-current={href === tab ? "page" : undefined}
                 className={classnames(
                   href === tab
-                    ? "text-gray-900"
-                    : "text-gray-500 hover:text-gray-700",
+                    ? "text-gray-800 dark:text-slate-200"
+                    : "text-gray-500 hover:text-gray-700 dark:text-slate-400 dark:hover:text-slate-300",
                   tabIdx === 0 ? "rounded-l-lg" : "",
                   tabIdx === tabs.length - 1 ? "rounded-r-lg" : "",
-                  "group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-6 text-center text-sm font-medium hover:bg-gray-50 focus:z-10"
+                  "group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-6 text-center text-sm font-medium hover:bg-gray-50 focus:z-10 dark:bg-slate-800 dark:hover:bg-slate-600"
                 )}
                 onClick={() => setTab(href)}
               >

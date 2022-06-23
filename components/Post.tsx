@@ -24,7 +24,7 @@ export interface IPost {
 
 export function Post({ post }: { post: IPost }) {
   return (
-    <li className="bg-white px-4 py-6 shadow sm:rounded-lg sm:p-6">
+    <li className="bg-white px-4 py-6 shadow dark:bg-slate-800 sm:rounded-lg sm:p-6">
       <article aria-labelledby={`post-title-${post.id}`}>
         <div>
           <div className="flex space-x-3">
@@ -38,10 +38,10 @@ export function Post({ post }: { post: IPost }) {
               />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="text-sm font-medium text-gray-900">
+              <p className="text-sm font-medium text-gray-800 dark:text-slate-200">
                 {post.author.name}
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500 dark:text-slate-400">
                 <time dateTime={post.datetime}>{post.date}</time>
               </p>
             </div>
@@ -62,7 +62,7 @@ export function Post({ post }: { post: IPost }) {
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95"
                 >
-                  <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-slate-800">
                     <div className="py-1">
                       <Menu.Item>
                         {({ active }) => (
@@ -70,8 +70,8 @@ export function Post({ post }: { post: IPost }) {
                             href={post.linkedin}
                             className={classnames(
                               active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
+                                ? "bg-gray-100 text-gray-800 dark:bg-slate-700 dark:text-slate-200"
+                                : "text-gray-700 dark:text-slate-300",
                               "flex px-4 py-2 text-sm"
                             )}
                           >
@@ -89,8 +89,8 @@ export function Post({ post }: { post: IPost }) {
                             href={post.website}
                             className={classnames(
                               active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
+                                ? "bg-gray-100 text-gray-800 dark:bg-slate-700 dark:text-slate-200"
+                                : "text-gray-700 dark:text-slate-300",
                               "flex px-4 py-2 text-sm"
                             )}
                           >
@@ -110,12 +110,14 @@ export function Post({ post }: { post: IPost }) {
           </div>
           <h2
             id={`post-title-${post.id}`}
-            className="mt-4 text-base font-medium text-gray-900"
+            className="mt-4 text-base font-medium text-gray-800 dark:text-slate-200"
           >
             {post.title}
           </h2>
         </div>
-        <div className="mt-2 space-y-4 text-sm text-gray-700">{post.body}</div>
+        <div className="mt-2 space-y-4 text-sm text-gray-700 dark:text-slate-300">
+          {post.body}
+        </div>
       </article>
     </li>
   );
