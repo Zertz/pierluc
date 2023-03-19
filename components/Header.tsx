@@ -9,7 +9,11 @@ import classnames from "classnames";
 import Image from "next/image";
 
 const userNavigation = [
-  { name: "GitHub", href: "https://github.com/Zertz", icon: CodeBracketIcon },
+  {
+    name: "GitHub",
+    href: "https://github.com/Zertz",
+    icon: CodeBracketIcon,
+  },
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/pierlucgendreau/",

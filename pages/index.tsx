@@ -1,4 +1,3 @@
-import { BriefcaseIcon, CodeBracketIcon } from "@heroicons/react/24/outline";
 import classnames from "classnames";
 import Head from "next/head";
 import { useEffect } from "react";
@@ -8,19 +7,6 @@ import { Header } from "../components/Header";
 import { Projects, projects } from "../components/Projects";
 import { Timeline } from "../components/Timeline";
 import { GitHubRepository } from "../types";
-
-const userNavigation = [
-  {
-    name: "GitHub",
-    href: "https://github.com/Zertz",
-    icon: CodeBracketIcon,
-  },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/pierlucgendreau/",
-    icon: BriefcaseIcon,
-  },
-];
 
 const tabs = [
   { name: "Timeline", href: "#timeline" },
