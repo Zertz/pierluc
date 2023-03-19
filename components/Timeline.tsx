@@ -1,10 +1,10 @@
 import {
   BriefcaseIcon,
-  ChatIcon,
-  CodeIcon,
+  ChatBubbleOvalLeftEllipsisIcon,
+  CodeBracketIcon,
+  HandThumbUpIcon,
   LightBulbIcon,
-  ThumbUpIcon,
-} from "@heroicons/react/outline";
+} from "@heroicons/react/24/outline";
 import classnames from "classnames";
 
 const timeline = [
@@ -14,7 +14,7 @@ const timeline = [
     href: "https://focusoptimization.com/",
     date: "December 2021",
     datetime: "2021-12-15",
-    icon: ThumbUpIcon,
+    icon: HandThumbUpIcon,
     iconBackground: "bg-green-500",
   },
   {
@@ -23,16 +23,16 @@ const timeline = [
     href: "https://tempocal.pierluc.io/",
     date: "November 2021",
     datetime: "2021-11-25",
-    icon: CodeIcon,
+    icon: CodeBracketIcon,
     iconBackground: "bg-pink-500",
   },
   {
     content: "Created",
-    target: "Spruce · MongoDB GUI for macOS",
+    target: "Spruce for MongoDB",
     href: "https://spruce.pierluc.io/",
     date: "February 2021",
     datetime: "2021-02-21",
-    icon: CodeIcon,
+    icon: CodeBracketIcon,
     iconBackground: "bg-pink-500",
   },
   {
@@ -41,7 +41,7 @@ const timeline = [
     href: "https://focusoptimization.com/",
     date: "December 2020",
     datetime: "2020-12-15",
-    icon: ThumbUpIcon,
+    icon: HandThumbUpIcon,
     iconBackground: "bg-green-500",
   },
   {
@@ -50,7 +50,7 @@ const timeline = [
     href: "https://react-headless-tabs.pierluc.io/",
     date: "September 2020",
     datetime: "2020-09-10",
-    icon: CodeIcon,
+    icon: CodeBracketIcon,
     iconBackground: "bg-pink-500",
   },
   {
@@ -69,7 +69,7 @@ const timeline = [
     href: "http://canados.pierluc.io/",
     date: "March 2020",
     datetime: "2020-03-01",
-    icon: CodeIcon,
+    icon: CodeBracketIcon,
     iconBackground: "bg-pink-500",
   },
   {
@@ -87,7 +87,7 @@ const timeline = [
     href: "https://www.classcraft.com/",
     date: "August 2019",
     datetime: "2019-08-01",
-    icon: ThumbUpIcon,
+    icon: HandThumbUpIcon,
     iconBackground: "bg-green-500",
   },
   {
@@ -96,7 +96,7 @@ const timeline = [
     href: "#",
     date: "May 2018",
     datetime: "2018-05-16",
-    icon: ChatIcon,
+    icon: ChatBubbleOvalLeftEllipsisIcon,
     iconBackground: "bg-blue-500",
   },
   {
@@ -105,7 +105,7 @@ const timeline = [
     href: "https://jirafe-zertz.vercel.app/",
     date: "April 2018",
     datetime: "2018-04-07",
-    icon: CodeIcon,
+    icon: CodeBracketIcon,
     iconBackground: "bg-pink-500",
   },
   {
@@ -114,7 +114,7 @@ const timeline = [
     href: "#",
     date: "March 2018",
     datetime: "2018-03-21",
-    icon: ChatIcon,
+    icon: ChatBubbleOvalLeftEllipsisIcon,
     iconBackground: "bg-blue-500",
   },
   {
@@ -123,7 +123,7 @@ const timeline = [
     href: "#",
     date: "February 2018",
     datetime: "2018-02-21",
-    icon: ChatIcon,
+    icon: ChatBubbleOvalLeftEllipsisIcon,
     iconBackground: "bg-blue-500",
   },
   {
@@ -159,7 +159,7 @@ const timeline = [
     href: "https://github.com/florianholzapfel/express-restify-mongoose",
     date: "August 2015",
     datetime: "2015-08-17",
-    icon: CodeIcon,
+    icon: CodeBracketIcon,
     iconBackground: "bg-pink-500",
   },
   {

@@ -1,9 +1,9 @@
 import {
   BookOpenIcon,
-  CodeIcon,
+  CodeBracketIcon,
   GlobeAltIcon,
   StarIcon,
-} from "@heroicons/react/outline";
+} from "@heroicons/react/24/outline";
 import { Repository } from "../pages";
 
 interface IProject {
@@ -115,7 +115,7 @@ export function Projects({
                       href={repositories[project.repository].html_url}
                       className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center rounded-bl-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500 dark:text-slate-300"
                     >
-                      <CodeIcon
+                      <CodeBracketIcon
                         className="h-5 w-5 text-gray-400"
                         aria-hidden="true"
                       />

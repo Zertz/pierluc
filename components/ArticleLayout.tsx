@@ -1,4 +1,4 @@
-import { ClipboardCopyIcon } from "@heroicons/react/outline";
+import { ClipboardIcon } from "@heroicons/react/24/outline";
 import { MDXProvider } from "@mdx-js/react";
 import { Header } from "./Header";
 
@@ -6,7 +6,7 @@ const components = {
   pre({ children }) {
     return (
       <pre className="relative">
-        <ClipboardCopyIcon className="absolute top-3 right-2 h-5 w-5" />
+        <ClipboardIcon className="absolute top-3 right-2 h-5 w-5" />
         {children}
       </pre>
     );

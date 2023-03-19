@@ -1,16 +1,20 @@
-import { BriefcaseIcon, CodeIcon } from "@heroicons/react/outline";
+import { BriefcaseIcon, CodeBracketIcon } from "@heroicons/react/24/outline";
 import classnames from "classnames";
 import Head from "next/head";
 import { useEffect } from "react";
 import { TabPanel, useTabs } from "react-headless-tabs";
 import { Experience } from "../components/Experience";
 import { Header } from "../components/Header";
-import { projects, Projects } from "../components/Projects";
+import { Projects, projects } from "../components/Projects";
 import { Timeline } from "../components/Timeline";
 import { GitHubRepository } from "../types";
 
 const userNavigation = [
-  { name: "GitHub", href: "https://github.com/Zertz", icon: CodeIcon },
+  {
+    name: "GitHub",
+    href: "https://github.com/Zertz",
+    icon: CodeBracketIcon,
+  },
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/pierlucgendreau/",
@@ -105,6 +109,7 @@ export default function Home({
         <TabPanel hidden={tab !== "#jobs"}>
           <Experience />
         </TabPanel>
+        <TabPanel hidden={tab !== "#blog"}>Blog</TabPanel>
       </main>
     </div>
   );

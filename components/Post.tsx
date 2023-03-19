@@ -1,9 +1,9 @@
 import { Menu, Transition } from "@headlessui/react";
 import {
   BriefcaseIcon,
-  DotsVerticalIcon,
+  EllipsisVerticalIcon,
   GlobeAltIcon,
-} from "@heroicons/react/outline";
+} from "@heroicons/react/24/outline";
 import classnames from "classnames";
 import Image from "next/image";
 import { Fragment, ReactNode } from "react";
@@ -50,7 +50,10 @@ export function Post({ post }: { post: IPost }) {
                 <div>
                   <Menu.Button className="-m-2 flex items-center rounded-full p-2 text-gray-400 hover:text-gray-600">
                     <span className="sr-only">Open options</span>
-                    <DotsVerticalIcon className="h-5 w-5" aria-hidden="true" />
+                    <EllipsisVerticalIcon
+                      className="h-5 w-5"
+                      aria-hidden="true"
+                    />
                   </Menu.Button>
                 </div>
                 <Transition
