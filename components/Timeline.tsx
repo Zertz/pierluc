@@ -9,6 +9,15 @@ import classnames from "classnames";
 
 const timeline = [
   {
+    content: "Presented a talk",
+    target: "on improving webpack build performance",
+    href: "#",
+    date: "January 2023",
+    datetime: "2023-01-18",
+    icon: ChatBubbleOvalLeftEllipsisIcon,
+    iconBackground: "bg-blue-500",
+  },
+  {
     content: "Developer Analyst III",
     target: "at FOCUS by TELUS",
     href: "https://focusoptimization.com/",
